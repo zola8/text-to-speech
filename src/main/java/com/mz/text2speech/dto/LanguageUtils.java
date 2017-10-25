@@ -1,4 +1,4 @@
-package com.mz.txt2speech.dto;
+package com.mz.text2speech.dto;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,7 +38,7 @@ public final class LanguageUtils {
 		// utility constructor
 	}
 
-	public static List<LanguageInfo> getLanguageTable() {
+	public static List<LanguageInfo> getLanguageInfoTable() {
 		return infoTable;
 	}
 

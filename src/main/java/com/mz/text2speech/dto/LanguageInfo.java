@@ -1,4 +1,6 @@
-package com.mz.txt2speech.dto;
+package com.mz.text2speech.dto;
+
+import static org.junit.Assert.assertNotNull;
 
 public class LanguageInfo {
 
@@ -6,11 +8,11 @@ public class LanguageInfo {
 	private String voiceName;
 	private String gender;
 
-	public LanguageInfo() {
-		// default constructor
-	}
-
 	public LanguageInfo(String locale, String voiceName, String gender) {
+		assertNotNull(locale);
+		assertNotNull(voiceName);
+		assertNotNull(gender);
+
 		this.locale = locale;
 		this.voiceName = voiceName;
 		this.gender = gender;
@@ -52,6 +54,5 @@ public class LanguageInfo {
 		builder.append("]");
 		return builder.toString();
 	}
-
 
 }

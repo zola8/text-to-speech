@@ -1,4 +1,4 @@
-package com.mz.txt2speech.service.impl;
+package com.mz.text2speech.service.impl;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

@@ -1,4 +1,4 @@
-package com.mz.txt2speech.rest;
+package com.mz.text2speech.rest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mz.txt2speech.dto.LanguageInfo;
-import com.mz.txt2speech.dto.LanguageUtils;
-import com.mz.txt2speech.service.EffectService;
-import com.mz.txt2speech.service.impl.VoiceManagerServiceImpl;
+import com.mz.text2speech.dto.LanguageInfo;
+import com.mz.text2speech.dto.LanguageUtils;
+import com.mz.text2speech.service.EffectService;
+import com.mz.text2speech.service.impl.VoiceManagerServiceImpl;
 
 import marytts.signalproc.effects.AudioEffect;
 import marytts.signalproc.effects.AudioEffects;
@@ -78,7 +78,7 @@ public class VoiceController {
 
 	@RequestMapping("/info/languageTable")
 	public List<LanguageInfo> getLanguageTable() {
-		return LanguageUtils.getLanguageTable();
+		return LanguageUtils.getLanguageInfoTable();
 	}
 
 }

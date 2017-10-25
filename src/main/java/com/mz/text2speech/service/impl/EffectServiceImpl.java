@@ -1,4 +1,4 @@
-package com.mz.txt2speech.service.impl;
+package com.mz.text2speech.service.impl;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.mz.txt2speech.service.EffectService;
+import com.mz.text2speech.service.EffectService;
 
 @Service
 public class EffectServiceImpl implements EffectService {

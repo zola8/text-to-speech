@@ -2,8 +2,10 @@
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
-bin/
-target/
+/bin
+/target
+/dist
+/tmp
 
 ### STS ###
 .apt_generated

@@ -1,4 +1,4 @@
-package com.mz.txt2speech;
+package com.mz.text2speech;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TextToSpeech2ApplicationTests {
+public class TextToSpeechApplicationTests {
 
 	@Test
 	public void contextLoads() {

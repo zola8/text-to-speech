@@ -1,4 +1,4 @@
-package com.mz.txt2speech.service.impl;
+package com.mz.text2speech.service.impl;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.mz.txt2speech.service.VoiceManagerService;
+import com.mz.text2speech.service.VoiceManagerService;
 
 import marytts.LocalMaryInterface;
 import marytts.MaryInterface;

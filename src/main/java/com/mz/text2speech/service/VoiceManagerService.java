@@ -1,4 +1,4 @@
-package com.mz.txt2speech.service;
+package com.mz.text2speech.service;
 
 import marytts.MaryInterface;
 
