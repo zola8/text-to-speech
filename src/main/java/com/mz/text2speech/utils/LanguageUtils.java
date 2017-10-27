@@ -1,8 +1,10 @@
-package com.mz.text2speech.dto;
+package com.mz.text2speech.utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import com.mz.text2speech.dto.LanguageInfo;
 
 public final class LanguageUtils {
 

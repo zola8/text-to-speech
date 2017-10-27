@@ -1,0 +1,37 @@
+
+	private static Map<String, String> EFFECTS;
+
+	// http://marytts.phonetik.uni-muenchen.de:59125/audioeffects
+	// mary.setAudioEffects("Robot(amount:100)+Stadium(amount:200)");
+
+	public EffectServiceImpl() {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("Volume", "Volume(amount:%s)"); // 0..2
+		map.put("TractScaler", "TractScaler(amount:%s)"); // 0..4
+		map.put("F0Scale", "F0Scale(f0Scale:%s)"); // ? 0..100
+		map.put("F0Add", "F0Add(f0Add:%s)"); // ? 0..100
+		map.put("Rate", "Rate(durScale:%s)");
+		map.put("Robot", "Robot(amount:%s)");
+		map.put("Whisper", "Whisper(amount:%s)");
+		map.put("Stadium", "Stadium(amount:%s)");
+		map.put("Chorus", "Chorus(delay1:466;amp1:0.54;delay2:600;amp2:-0.10;delay3:250;amp3:0.30)");
+		map.put("FIRFilter", "FIRFilter(type:3;fc1:500.0;fc2:2000.0)");
+		map.put("JetPilot", "JetPilot");
+		EFFECTS = Collections.unmodifiableMap(map);
+	}
+
+	public String getPattern(String effect) {
+		return EFFECTS.get(effect);
+	}
+
+	public String setPattern(String effect, String value) {
+		String result = getPattern(effect);
+		if (StringUtils.isEmpty(result)) {
+			LOGGER.info("No effect is set due to incorrect values. Effect={}; Value={}", effect, value);
+			return StringUtils.EMPTY;
+		}
+		result = String.format(result, value);
+		LOGGER.info("Effect is set to: {}", result);
+		return result;
+	}
+	

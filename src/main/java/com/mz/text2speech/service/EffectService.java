@@ -4,10 +4,25 @@ import java.util.List;
 
 public interface EffectService {
 
-	public List<String> getKnownEffects();
+	/**
+	 * Gets back all known effects what can be added to the voice.
+	 * 
+	 * @return list of effects
+	 */
+	List<String> getEffects();
 
-	public String getPattern(String effect);
+	/**
+	 * Counts and gets back the number of applicable effects.
+	 * 
+	 * @return number of available effects
+	 */
+	int countEffects();
 
-	public String setPattern(String effect, String value);
+	/**
+	 * Gets back all known effects and their's help text.
+	 * 
+	 * @return effects' help text
+	 */
+	String getEffectsInfo();
 
 }

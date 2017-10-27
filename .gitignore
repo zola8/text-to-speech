@@ -6,6 +6,7 @@
 /target
 /dist
 /tmp
+/log
 
 ### STS ###
 .apt_generated
