@@ -1,7 +1,5 @@
 package com.mz.text2speech.dto;
 
-import static org.junit.Assert.assertNotNull;
-
 public class LanguageInfo {
 
 	private String locale;
@@ -9,10 +7,6 @@ public class LanguageInfo {
 	private String gender;
 
 	public LanguageInfo(String locale, String voiceName, String gender) {
-		assertNotNull(locale);
-		assertNotNull(voiceName);
-		assertNotNull(gender);
-
 		this.locale = locale;
 		this.voiceName = voiceName;
 		this.gender = gender;

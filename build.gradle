@@ -3,6 +3,9 @@ buildscript {
 		springBootVersion = '1.5.6.RELEASE'
 	}
 	repositories {
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
 		mavenCentral()
 	}
 	dependencies {
@@ -12,22 +15,31 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
+
 repositories {
 	mavenCentral()
+
 	jcenter()
-	flatDir {
-       dirs 'dependency'
-   }
+
+//	flatDir {
+//		dirs 'dependency'
+//	}
 }
 
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+	
 	compile 'de.dfki.mary:marytts-client:5.2'
 
 	compile 'de.dfki.mary:marytts-lang-de:5.2'
@@ -57,6 +69,25 @@ dependencies {
 	compile 'de.dfki.mary:voice-upmc-jessica-hsmm:5.2'
 	compile 'de.dfki.mary:voice-upmc-pierre-hsmm:5.2'
 	
-	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+
+
+task setHttpProxyFromEnv {
+    def map = ['HTTP_PROXY': 'http', 'HTTPS_PROXY': 'https']
+    for (e in System.getenv()) {
+        def key = e.key.toUpperCase()
+        if (key in map) {
+            def base = map[key]
+            def url = e.value.toURL()
+            println " - systemProp.${base}.proxy=${url.host}:${url.port}"
+            System.setProperty("${base}.proxyHost", url.host.toString())
+            System.setProperty("${base}.proxyPort", url.port.toString())
+        }
+    }
+}
+
+build.dependsOn setHttpProxyFromEnv
+
+// gradle -Dhttp.proxyHost=yourProxy -Dhttp.proxyPort=yourPort
